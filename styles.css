@@ -1,0 +1,150 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #B4D6CD, #FFDA76, #FF8C9E); 
+    overflow: hidden; 
+}
+
+
+/* Game Screen */
+#game-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+#winner-screen {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(236, 223, 204, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+    flex-direction: column;
+    color: black; 
+    text-align: center; 
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
+
+/* Name Inputs and Difficulty Selector */
+#name-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 16px;
+    width: 200px; 
+}
+
+select {
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 16px;
+}
+
+/* Game Board */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 5px;
+    margin: 20px auto;
+}
+
+/* Cells */
+.cell {
+    background-color: white; 
+    border: 2px solid #fff; 
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    position: relative;
+    color: black; 
+    transition: background-color 0.3s, transform 0.2s; 
+}
+
+/* Hover Effect for Cells */
+.cell:hover {
+    background-color: #ddd; 
+    transform: scale(1.05); 
+}
+
+/* Animation for Marking a Cell */
+@keyframes markCell {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.cell.x::before {
+    content: 'X';
+    color: red; 
+    font-size: 2em; 
+    animation: markCell 0.3s ease-out; 
+}
+
+.cell.o::before {
+    content: 'O';
+    color: blue; 
+    font-size: 2em; 
+    animation: markCell 0.3s ease-out; 
+}
+
+/* Buttons */
+#restart-btn, #play-again-btn, #start-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px; 
+}
+
+/* Button Hover Effect */
+#restart-btn:hover, #play-again-btn:hover, #start-btn:hover {
+    background-color: #45a049;
+}
+
+/* Scoreboard and Turn Display */
+#scoreboard,
+#turn-display {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}

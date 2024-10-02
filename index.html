@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - Game Rules</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #B4D6CD, #FFDA76, #FF8C9E); 
+    overflow: hidden; 
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px 0;
+    padding: 5px;
+    font-family: 'Arial', sans-serif;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #555;
+    font-family: 'Arial', sans-serif;
+    padding: 3px;
+    transition: color 0.3s;
+}
+
+h2:hover {
+    color: #333;
+}
+
+
+.rules {
+    background-color: rgba(255, 255, 255, 0.85); 
+    border-radius: 30px;
+    padding: 70px;
+    text-align: left; 
+    margin: 50px auto;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+    max-width: 450px; 
+   
+    color: black; 
+    backdrop-filter: blur(5px); 
+    transition: transform 0.3s ease-in-out; 
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.2em;
+    
+}
+
+li {
+    margin: 10px 0;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    button {
+        font-size: 1em;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to Tic Tac Toe!</h1>
+    <h2>Game Rules:</h2>
+    <div class="rules">
+        <ul>
+            <li>1. Two players take turns placing their marks (X and O) on a 4x4 grid.</li>
+            <br>
+            <li>2. The first player to align four of their marks in a row (horizontally, vertically, or diagonally) wins.</li>
+            <br>
+            <li>3. Players can have a maximum of 4 marks on the board at a time. When placing a new mark, the oldest one will disappear.</li>
+            <br>
+            <li>Enjoy the game!</li>
+        </ul>
+    
+    <button id="start-btn">Start Game</button>
+</div>
+    <script>
+        document.getElementById('start-btn').addEventListener('click', () => {
+            window.location.href = 'input.html';
+        });
+    </script>
+</body>
+</html>

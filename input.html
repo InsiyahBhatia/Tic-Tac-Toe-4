@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #B4D6CD, #FFDA76, #FF8C9E );
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: black;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-mode {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        #name-inputs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], select {
+            padding: 10px;
+            margin: 5px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        <div class="game-mode">
+            <input type="radio" id="player-vs-player" name="game-mode" value="player" checked>
+            <label for="player-vs-player">Player vs Player</label>
+            <input type="radio" id="player-vs-computer" name="game-mode" value="computer">
+            <label for="player-vs-computer">Player vs Computer</label>
+        </div>
+        <div id="name-inputs">
+            <input type="text" id="playerX" placeholder="Enter Player X Name" required />
+            <input type="text" id="playerO" placeholder="Enter Player O Name" required />
+            <div id="difficulty-container" style="display: none;">
+                <label for="difficulty">Select Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <button id="start-btn">Start Game</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('start-btn').addEventListener('click', () => {
+            const playerX = document.getElementById('playerX').value || 'Player X';
+            const playerO = document.getElementById('playerO').value || 'Player O';
+            const gameMode = document.querySelector('input[name="game-mode"]:checked').value;
+            const difficulty = document.getElementById('difficulty').value;
+
+            
+            localStorage.setItem('playerX', playerX);
+            localStorage.setItem('playerO', playerO);
+            localStorage.setItem('gameMode', gameMode);
+            localStorage.setItem('difficulty', difficulty);
+
+
+            window.location.href = 'setup.html';
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
